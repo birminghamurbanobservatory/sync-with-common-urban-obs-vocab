@@ -19,7 +19,7 @@ logger.configure(Object.assign({}, config.logger, {getCorrelationId}));
 // Sync Vocab
 //-------------------------------------------------
 logger.info(`Running ${appName} now (${new Date().toISOString()})`);
-logger.debug(`Vocab URL: ${config.vocab.url}`);
+logger.debug(`Base Vocab URL: ${config.vocab.baseUrl}`);
 
 
 (async (): Promise<void> => {
@@ -36,7 +36,7 @@ logger.debug(`Vocab URL: ${config.vocab.url}`);
 
   
   try {
-    await syncVocab(config.vocab.url);
+    await syncVocab();
     logger.debug('Synchronisation finished');
   } catch (err) {
     logger.error(`Failed to sync vocab (${err.message}).`, err);

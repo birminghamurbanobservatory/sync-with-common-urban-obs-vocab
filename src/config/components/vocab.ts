@@ -8,7 +8,7 @@ import * as joi from '@hapi/joi';
 // Validation Schema
 //-------------------------------------------------
 const schema = joi.object({
-  VOCAB_URL: joi.string()
+  VOCAB_BASE_URL: joi.string()
     .uri()
     .required() 
 }).unknown() // allows for extra fields (i.e that we don't check for) in the object being checked.
@@ -32,5 +32,5 @@ if (err) {
 //-------------------------------------------------
 // Pull out the properties we need to create this particular config object. 
 export const vocab = {
-  url: envVars.VOCAB_URL,
+  baseUrl: envVars.VOCAB_BASE_URL,
 };
