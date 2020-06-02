@@ -1,6 +1,6 @@
 {
   "name": "sync-with-common-urban-obs-vocab",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Intented to be run on a schedule, e.g. a Kubernetes CronJob. It gets the common Urban Observatory JSON vocabulary file, and ensures that we have a record of each definition within our own databases. For example it makes sure the Disciplines and Observable Properties are synced.",
   "main": "index.js",
   "scripts": {
